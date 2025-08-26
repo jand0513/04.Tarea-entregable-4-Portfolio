@@ -1,4 +1,4 @@
-// === FORM VALIDATION ===
+// === VALIDACIÓN DE FORMULARIO ===
 class FormValidator {
   constructor(formSelector) {
     this.form = document.querySelector(formSelector);
@@ -10,7 +10,7 @@ class FormValidator {
     
     this.form.addEventListener('submit', this.handleSubmit.bind(this));
     
-    // Add real-time validation
+    // Agregar validación en tiempo real
     const inputs = this.form.querySelectorAll('.form-input');
     inputs.forEach(input => {
       input.addEventListener('blur', () => this.validateField(input));
@@ -39,21 +39,21 @@ class FormValidator {
   validateForm(data) {
     let isValid = true;
     
-    // Validate name
+    // Validar nombre
     if (!this.validateName(data.name)) {
-      this.showError('name', 'Sorry, invalid format here');
+      this.showError('name', 'Lo siento, formato inválido aquí');
       isValid = false;
     }
     
-    // Validate email
+    // Validar email
     if (!this.validateEmail(data.email)) {
-      this.showError('email', 'Sorry, invalid format here');
+      this.showError('email', 'Lo siento, formato inválido aquí');
       isValid = false;
     }
     
-    // Validate message
+    // Validar mensaje
     if (!this.validateMessage(data.message)) {
-      this.showError('message', 'Sorry, invalid format here');
+      this.showError('message', 'Lo siento, formato inválido aquí');
       isValid = false;
     }
     
@@ -77,7 +77,7 @@ class FormValidator {
     }
     
     if (!isValid && value.trim() !== '') {
-      this.showError(name, 'Sorry, invalid format here');
+      this.showError(name, 'Lo siento, formato inválido aquí');
     } else {
       this.clearError(input);
     }
@@ -120,12 +120,12 @@ class FormValidator {
   }
   
   showSuccess() {
-    // You can implement a success message here
-    alert('Message sent successfully!');
+    // Aquí puedes implementar un mensaje de éxito
+    alert('¡Mensaje enviado exitosamente!');
   }
 }
 
-// === SMOOTH SCROLLING ===
+// === DESPLAZAMIENTO SUAVE ===
 function initSmoothScrolling() {
   const links = document.querySelectorAll('a[href^="#"]');
   
@@ -151,7 +151,7 @@ function initSmoothScrolling() {
   });
 }
 
-// === PROJECT HOVER EFFECTS ===
+// === EFECTOS HOVER DE PROYECTOS ===
 function initProjectHovers() {
   const projects = document.querySelectorAll('.project');
   
@@ -160,7 +160,7 @@ function initProjectHovers() {
     const overlay = project.querySelector('.project__overlay');
     
     if (image && overlay) {
-      // Touch device support
+      // Soporte para dispositivos táctiles
       image.addEventListener('touchstart', () => {
         overlay.style.opacity = '1';
       });
@@ -174,9 +174,9 @@ function initProjectHovers() {
   });
 }
 
-// === ACCESSIBILITY IMPROVEMENTS ===
+// === MEJORAS DE ACCESIBILIDAD ===
 function initAccessibility() {
-  // Add keyboard navigation for project overlays
+  // Agregar navegación por teclado para overlays de proyectos
   const projects = document.querySelectorAll('.project');
   
   projects.forEach(project => {
@@ -185,17 +185,17 @@ function initAccessibility() {
     const buttons = overlay?.querySelectorAll('.btn--secondary');
     
     if (image && overlay && buttons.length > 0) {
-      // Make image focusable
+      // Hacer la imagen enfocable
       image.setAttribute('tabindex', '0');
       image.setAttribute('role', 'button');
-      image.setAttribute('aria-label', 'View project details');
+      image.setAttribute('aria-label', 'Ver detalles del proyecto');
       
       image.addEventListener('focus', () => {
         overlay.style.opacity = '1';
       });
       
       image.addEventListener('blur', (e) => {
-        // Don't hide if focus moved to overlay buttons
+        // No ocultar si el foco se movió a los botones del overlay
         setTimeout(() => {
           if (!overlay.contains(document.activeElement)) {
             overlay.style.opacity = '0';
@@ -203,7 +203,7 @@ function initAccessibility() {
         }, 100);
       });
       
-      // Handle keyboard navigation
+      // Manejar navegación por teclado
       image.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -214,19 +214,19 @@ function initAccessibility() {
   });
 }
 
-// === INITIALIZATION ===
+// === INICIALIZACIÓN ===
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize form validation
+  // Inicializar validación de formulario
   new FormValidator('#contactForm');
   
-  // Initialize smooth scrolling
+  // Inicializar desplazamiento suave
   initSmoothScrolling();
   
-  // Initialize project hovers
+  // Inicializar efectos hover de proyectos
   initProjectHovers();
   
-  // Initialize accessibility features
+  // Inicializar características de accesibilidad
   initAccessibility();
   
-  console.log('Portfolio initialized successfully!');
+  console.log('¡Portfolio inicializado exitosamente!');
 });

@@ -1,9 +1,27 @@
+// === ARQUITECTURA SASS 7-1 ===
+// Archivo principal que importa todos los módulos de estilos
+
+// Abstracts: Variables, funciones, mixins y placeholders
 @use './abstracts/abstracts';
+
+// Vendors: Librerías y frameworks de terceros
 @use './vendors/vendors';
+
+// Base: Reset, tipografía, animaciones globales
 @use './base/base';
+
+// Components: Componentes reutilizables (botones, cards, etc.)
 @use './components/components';
+
+// Layout: Estructura de layout (header, footer, grid, etc.)
 @use './layout/layout';
+
+// Pages: Estilos específicos de páginas
 @use './pages/pages';
+
+// Themes: Temas y variaciones de color
 @use './themes/themes';
+
+// Settings: Configuraciones globales del proyecto
 @use 'settings';
 

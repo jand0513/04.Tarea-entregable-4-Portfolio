@@ -1,4 +1,4 @@
-// === VITE ENTRY POINT ===
+// === PUNTO DE ENTRADA DE VITE ===
 // Importar estilos SASS (Vite los compilará automáticamente)
 import './sass/app.scss';
 
