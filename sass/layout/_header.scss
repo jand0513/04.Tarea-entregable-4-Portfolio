@@ -1,0 +1,385 @@
+@use '../abstracts/variables' as *;
+
+/* === HEADER === */
+.header {
+  position: relative;
+  z-index: 10;
+  overflow-x: hidden; // Prevenir scroll horizontal en todas las versiones responsive
+  
+  // Patrón de rings principal del header (solo desktop)
+  &::before {
+    @media (min-width: $breakpoint-desktop) {
+      content: '';
+      position: absolute;
+      top: 12rem; // Posición entre el logo y el título "Nice"
+      left: calc(50% - #{$container-max-width / 2} + #{$spacing-lg} - 20rem); // Cerca del borde izquierdo, cerca del texto
+      width: 33.125rem; // 530px
+      height: 8.0625rem; // 129px
+      background-image: url('/img/icons/pattern-rings.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+    }
+  }
+  
+  // Navigation wrapper
+  &__nav {
+    padding: $spacing-lg 0 $spacing-md; // 32px top, 24px bottom en mobile
+    
+    @media (min-width: $breakpoint-tablet) {
+      padding: $spacing-lg 0 0;
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      padding: $spacing-lg 0 $spacing-xl; // 32px top, 48px bottom en desktop
+    }
+  }
+  
+  // Main content wrapper for two columns in tablet
+  &__main {
+    @media (min-width: $breakpoint-tablet) {
+      position: relative;
+      display: block; // Cambiar a block para controlar mejor el posicionamiento
+      min-height: 40rem; // Altura mínima para contener el contenido
+      padding: $spacing-xl 0 $spacing-xxxl;
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0;
+      align-items: start;
+      min-height: auto;
+      padding: 0 0 22rem; // 96px - Espaciado más razonable y proporcional
+    }
+  }
+  
+  // Content area (left column in tablet)
+  &__content {
+    position: relative;
+    z-index: 10; // Aumentar z-index para estar encima de la imagen
+    
+    @media (min-width: $breakpoint-tablet) {
+      position: absolute; // Posición absoluta para solaparse
+      top: $spacing-xl; // 48px desde arriba
+      left: $spacing-lg; // Alinear con nav y skills (32px)
+      width: 70%; // Cambiar ancho a 65%
+      height: 37.5rem; // Misma altura que la imagen en tablet (600px)
+      padding: 0; // Sin padding para usar el left como margen
+      display: flex;
+      flex-direction: column;
+      justify-content: center; // Centrar verticalmente el contenido
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      position: relative; // Volver a relativo en desktop
+      padding: 8rem 0 0 0; // 128px top padding para dar espacio después del nav
+      top: auto;
+      left: auto; // Restaurar left automático en desktop
+      width: auto; // Restaurar ancho automático en desktop
+      height: auto; // Restaurar altura automática en desktop
+      display: block; // Restaurar display normal
+      justify-content: normal; // Restaurar justify-content
+    }
+    
+    // Eliminar padding izquierdo del container dentro de header__content en tablet
+    .container {
+      @media (min-width: $breakpoint-tablet) {
+        padding-left: 0;
+      }
+    }
+  }
+  
+  // Image containers
+  &__image {
+    position: relative;
+    text-align: center;
+    background-color: $color-dark-grey; // Mismo color que la sección contact
+    
+    // Mobile version - shows after hero content
+    &--mobile {
+      margin: 0;
+      padding: 0;
+      width: 10.875rem; // 174px - mismo ancho que la imagen
+      margin: 0 auto 2rem; // Centrar el contenedor + margin bottom de 2rem
+      
+      @media (min-width: $breakpoint-tablet) {
+        display: none; // Hide on tablet and desktop
+      }
+      
+      // Iconos sociales en mobile - arriba de la imagen, dentro del mismo contenedor
+      .navbar__social {
+        display: flex;
+        gap: $spacing-sm;
+        justify-content: center;
+        margin-bottom: $spacing-lg; // 32px espacio abajo de los iconos
+        // NO background-color aquí - usa el del contenedor padre
+      }
+    }
+    
+    // Tablet/Desktop version - right column in tablet
+    &--tablet-desktop {
+      display: none; // Hide on mobile
+      background-color: $color-dark-grey; // Mismo color que la sección contact
+      
+      @media (min-width: $breakpoint-tablet) {
+        display: block;
+        position: relative; // Volver a relativo como estaba
+        width: 20.125rem; // 322px tablet width
+        z-index: 1;
+        margin-left: auto; // Alinear a la derecha
+        margin-top: -6rem; // Extender el bloque hacia arriba para alcanzar el logo
+        padding: calc(6rem + #{$spacing-lg}) $spacing-lg $spacing-lg; // Padding top extendido + padding normal
+      }
+      
+      @media (min-width: $breakpoint-desktop) {
+        position: absolute;
+        top: $spacing-xl; // 48px desde el top del header__main
+        right: calc(50% - #{$container-max-width / 2} + #{$spacing-lg}); // Alineado con el margen derecho del contenido
+        width: 27.8125rem; // 445px desktop width
+        text-align: left;
+        z-index: 1;
+        margin-top: -10rem; // Extender el bloque hacia arriba
+        padding: calc(8rem + 2rem) 0rem 2rem; // Padding modificado
+      }
+      
+      // Iconos sociales en tablet/desktop - alineados con el logo en la parte superior extendida
+      .navbar__social {
+        @media (min-width: $breakpoint-tablet) {
+          position: absolute;
+          top: $spacing-md; // En la parte superior extendida del contenedor
+          right: $spacing-md; // Margen desde el borde derecho
+          display: flex;
+          gap: $spacing-lg;
+          // NO background-color aquí - usa el del contenedor padre
+        }
+        
+        @media (min-width: $breakpoint-desktop) {
+          top: $spacing-md; // En la parte superior extendida del contenedor
+          right: $spacing-md; // Margen desde el borde derecho
+          // NO background-color aquí - usa el del contenedor padre
+        }
+      }
+    }
+  }
+  
+  &__photo {
+    object-fit: cover;
+    
+    .header__image--mobile & {
+      width: 10.875rem; // 174px mobile
+      height: 15.125rem; // 242px
+      margin: 0 auto;
+      position: relative;
+      z-index: 2; // Por delante de rings y circle
+    }
+    
+    .header__image--tablet-desktop & {
+      @media (min-width: $breakpoint-tablet) {
+        width: 20.125rem; // 322px tablet
+        height: 37.5rem; // 600px
+        margin: 0 auto;
+      }
+      
+      @media (min-width: $breakpoint-desktop) {
+        width: 27.8125rem; // 445px desktop
+        height: 45rem; // 720px
+        margin: 0;
+      }
+    }
+  }
+  
+  &__rings {
+    position: absolute;
+    width: 33.125rem; // 530px
+    height: 8.0625rem; // 129px
+    background-image: url('/img/icons/pattern-rings.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    
+    .header__image--mobile & {
+      top: 2.125rem; // Cambio de posición vertical
+      left: -35%;
+      transform: translateX(-71%); // Cambio de transform
+      z-index: 1; // Por delante del contenedor mobile
+    }
+    
+    .header__image--tablet-desktop & {
+      @media (min-width: $breakpoint-tablet) {
+        top: 4rem; // Cambio de posición vertical en tablet
+        left: -45rem; // -350px - Más a la izquierda
+        transform: none;
+      }
+      
+      @media (min-width: $breakpoint-desktop) {
+        display: none; // Ocultar en desktop para evitar duplicación
+      }
+    }
+  }
+  
+  &__circle {
+    position: absolute;
+    width: 8.0625rem; // 129px
+    height: 8.0625rem; // 129px
+    background-image: url('/img/icons/pattern-circle.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    
+    .header__image--mobile & {
+      bottom: 0.125rem; // Posición inferior similar a rings top
+      right: -50%; // Ajustado para que no cause overflow
+      transform: translateX(30%); // Ajustado para mejor posicionamiento
+      z-index: 1; // Por delante del contenedor mobile
+    }
+    
+    .header__image--tablet-desktop & {
+      @media (min-width: $breakpoint-tablet) {
+        top: 29.5rem; // 264px - Posición específica para tablet, más arriba
+        right: -4.375rem; // 70px - Más visible en tablet
+      }
+      
+      @media (min-width: $breakpoint-desktop) {
+        top: 33.4375rem; // 535px
+        right: 22.0625rem; // 353px
+      }
+    }
+  }
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-lg;
+  
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+  
+  // Cuando está dentro de header__nav (navegación principal)
+  .header__nav & {
+    @media (min-width: $breakpoint-tablet) {
+      justify-content: flex-start; // Solo logo en tablet/desktop
+    }
+  }
+  
+  &__brand {
+    flex-shrink: 0;
+    text-align: center;
+    
+    @media (min-width: $breakpoint-tablet) {
+      text-align: left;
+    }
+  }
+  
+  &__logo {
+    height: 1.5rem; // 24px equivalente al texto original
+    width: auto;
+    
+    @media (min-width: $breakpoint-tablet) {
+      height: 1.8rem; // 28.8px - incremento del 20% en tablet
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      height: 1.8rem; // 28.8px - incremento del 20% en desktop (24px * 1.2)
+    }
+  }
+  
+  // Mantener el estilo del texto por si se necesita como fallback
+  &__name {
+    font-size: $font-size-m;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-m;
+    letter-spacing: -0.020833em; // -0.5px at 24px
+    color: $color-white;
+    
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 1.8rem; // Incrementar 20% (24px * 1.2 = 28.8px)
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      font-size: $font-size-m; // Restaurar tamaño original en desktop
+    }
+  }
+  
+  &__social {
+    display: flex;
+    gap: $spacing-sm;
+    
+    @media (min-width: $breakpoint-tablet) {
+      gap: $spacing-lg;
+    }
+  }
+  
+  &__link {
+    display: block;
+    padding: 0.5rem;
+    transition: transform $transition-fast;
+    
+    img {
+      width: 20px;
+      height: 20px;
+      
+      @media (min-width: $breakpoint-tablet) {
+        width: 27.5px; // Incrementar 10% (25px * 1.1 = 27.5px)
+        height: 27.5px;
+      }
+      
+      @media (min-width: $breakpoint-desktop) {
+        width: 30px; // Incremento del 20% (25px * 1.2 = 30px)
+        height: 30px;
+      }
+    }
+    
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid $color-green;
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Estilos específicos para iconos sociales dentro de las imágenes del header
+.header__image .navbar__social {
+  // NO background-color aquí - usa el del contenedor padre header__image
+  
+  .navbar__link {
+    display: block;
+    padding: 0.5rem;
+    transition: transform $transition-fast;
+    
+    img {
+      width: 20px;
+      height: 20px;
+      
+      @media (min-width: $breakpoint-tablet) {
+        width: 27.5px; // Incrementar 10% (25px * 1.1 = 27.5px)
+        height: 27.5px;
+      }
+      
+      @media (min-width: $breakpoint-desktop) {
+        width: 30px; // Incremento del 20% (25px * 1.2 = 30px)
+        height: 30px;
+      }
+    }
+    
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+    }
+    
+    &:focus-visible {
+      outline: 2px solid $color-green;
+      outline-offset: 2px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<!-- Thumbnail Project 5 - Memory Game -->
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="400" viewBox="0 0 540 400" style="background: #f5f5f5">
+  <rect width="540" height="400" fill="#f5f5f5"/>
+  <rect x="50" y="50" width="440" height="300" fill="#fff" rx="8"/>
+  
+  <!-- Memory game grid -->
+  <g transform="translate(170, 100)">
+    <!-- Row 1 -->
+    <circle cx="30" cy="30" r="20" fill="#4EE1A0"/>
+    <circle cx="90" cy="30" r="20" fill="#ff6b6b"/>
+    <circle cx="150" cy="30" r="20" fill="#4EE1A0"/>
+    <circle cx="210" cy="30" r="20" fill="#666"/>
+    
+    <!-- Row 2 -->
+    <circle cx="30" cy="90" r="20" fill="#666"/>
+    <circle cx="90" cy="90" r="20" fill="#4EE1A0"/>
+    <circle cx="150" cy="90" r="20" fill="#ff6b6b"/>
+    <circle cx="210" cy="90" r="20" fill="#4EE1A0"/>
+    
+    <!-- Row 3 -->
+    <circle cx="30" cy="150" r="20" fill="#ff6b6b"/>
+    <circle cx="90" cy="150" r="20" fill="#666"/>
+    <circle cx="150" cy="150" r="20" fill="#666"/>
+    <circle cx="210" cy="150" r="20" fill="#ff6b6b"/>
+  </g>
+  
+  <text x="270" y="320" dominant-baseline="middle" text-anchor="middle" fill="#4EE1A0" font-size="16" font-family="Space Grotesk, sans-serif">MEMORY GAME</text>
+</svg>

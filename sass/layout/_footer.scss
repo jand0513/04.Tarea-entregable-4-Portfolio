@@ -1,0 +1,126 @@
+@use '../abstracts/variables' as *;
+
+/* === FOOTER === */
+.footer {
+  padding: $spacing-xxl 0 $spacing-lg;
+  border-top: 1px solid $color-white;
+  background-color: $color-dark-grey; // Mismo color que contact section
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: $spacing-lg 0;
+    border-top: none; // Remover border directo
+    position: relative;
+    
+    // Crear borderline top con márgenes usando pseudo-elemento
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: $spacing-lg; // Mismo margen que el container
+      right: $spacing-lg; // Mismo margen que el container
+      height: 1px;
+      background-color: $color-white;
+    }
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    padding: $spacing-xl 0;
+    
+    &::before {
+      left: calc(50% - #{$container-max-width / 2} + #{$spacing-lg}); // Centrado con márgenes
+      right: calc(50% - #{$container-max-width / 2} + #{$spacing-lg});
+    }
+  }
+  
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+    
+    @media (min-width: $breakpoint-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+    }
+    
+    &__brand {
+      flex-shrink: 0;
+      text-align: center;
+      
+      @media (min-width: $breakpoint-tablet) {
+        text-align: left;
+      }
+    }
+    
+    &__logo {
+      height: 1.5rem; // 24px equivalente al texto original
+      width: auto;
+      
+      @media (min-width: $breakpoint-tablet) {
+        height: 1.8rem; // 28.8px - incremento del 20% en tablet
+      }
+      
+      @media (min-width: $breakpoint-desktop) {
+        height: 1.8rem; // 28.8px - incremento del 20% en desktop (24px * 1.2)
+      }
+    }
+    
+    // Mantener el estilo del texto por si se necesita como fallback
+    &__name {
+      font-size: $font-size-m;
+      font-weight: $font-weight-bold;
+      line-height: $line-height-m;
+      letter-spacing: -0.020833em; // -0.5px at 24px
+      color: $color-white;
+      
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 1.8rem; // Incrementar 20% (24px * 1.2 = 28.8px)
+      }
+      
+      @media (min-width: $breakpoint-desktop) {
+        font-size: $font-size-m; // Restaurar tamaño original en desktop
+      }
+    }
+    
+    &__social {
+      display: flex;
+      gap: $spacing-sm;
+      
+      @media (min-width: $breakpoint-tablet) {
+        gap: $spacing-lg;
+      }
+    }
+    
+    &__link {
+      display: block;
+      padding: 0.5rem;
+      transition: transform $transition-fast;
+      
+      img {
+        width: 20px;
+        height: 20px;
+        
+        @media (min-width: $breakpoint-tablet) {
+          width: 27.5px; // Incrementar 10% (25px * 1.1 = 27.5px)
+          height: 27.5px;
+        }
+        
+        @media (min-width: $breakpoint-desktop) {
+          width: 30px; // Incremento del 20% (25px * 1.2 = 30px)
+          height: 30px;
+        }
+      }
+      
+      &:hover,
+      &:focus {
+        transform: translateY(-2px);
+      }
+      
+      &:focus-visible {
+        outline: 2px solid $color-green;
+        outline-offset: 2px;
+      }
+    }
+  }
+}

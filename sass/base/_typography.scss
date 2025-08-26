@@ -1,0 +1,55 @@
+@use '../abstracts/variables' as *;
+
+/* === TYPOGRAPHY === */
+
+/* Heading XL */
+.heading-xl {
+  font-size: $font-size-l;
+  line-height: $line-height-l;
+  letter-spacing: $letter-spacing-l;
+  font-weight: $font-weight-bold;
+  
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 4.5rem; // 72px
+    line-height: 4.5rem;
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-xl;
+    line-height: $line-height-xl;
+    letter-spacing: $letter-spacing-xl;
+  }
+}
+
+/* Heading L */
+.heading-l {
+  font-size: 2rem; // 32px
+  line-height: 2.5rem; // 40px
+  letter-spacing: -0.0625rem; // -1px
+  font-weight: $font-weight-bold;
+  
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-l;
+    line-height: $line-height-l;
+    letter-spacing: $letter-spacing-l;
+  }
+}
+
+/* Heading M */
+.heading-m {
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  font-weight: $font-weight-bold;
+}
+
+/* Body Text */
+.body-text {
+  font-size: $font-size-sm;
+  line-height: 1.625rem; // 26px
+  color: $color-light-grey;
+  
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+}

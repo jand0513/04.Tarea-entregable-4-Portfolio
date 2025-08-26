@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as *;
+
+/* === BUTTONS === */
+.btn {
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.14286em; // 2.29px at 16px
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-normal;
+  border: none;
+  background: none;
+  
+  &:focus-visible {
+    outline: 2px solid $color-green;
+    outline-offset: 2px;
+  }
+}
+
+.btn--primary {
+  color: $color-white;
+  border-bottom: 2px solid $color-green;
+  padding-bottom: 0.625rem; // 10px
+  
+  &:hover,
+  &:focus {
+    color: $color-green;
+  }
+}
+
+.btn--secondary {
+  color: $color-white;
+  border-bottom: 2px solid $color-green;
+  padding-bottom: 0.625rem; // 10px
+  margin-right: $spacing-lg;
+  
+  &:last-child {
+    margin-right: 0;
+  }
+  
+  &:hover,
+  &:focus {
+    color: $color-green;
+  }
+}
+
+.btn--form {
+  align-self: flex-end;
+  margin-top: $spacing-lg;
+}

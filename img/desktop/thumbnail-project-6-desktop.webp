@@ -1,0 +1,31 @@
+<!-- Thumbnail Project 6 - Art Gallery Showcase -->
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="400" viewBox="0 0 540 400" style="background: #f8f8f8">
+  <rect width="540" height="400" fill="#f8f8f8"/>
+  <rect x="50" y="50" width="440" height="300" fill="#fff" rx="8"/>
+  
+  <!-- Art gallery grid -->
+  <g transform="translate(80, 80)">
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="70" height="50" fill="#4EE1A0" opacity="0.8" rx="2"/>
+    <rect x="80" y="0" width="70" height="50" fill="#ff6b6b" opacity="0.6" rx="2"/>
+    <rect x="160" y="0" width="70" height="50" fill="#666" rx="2"/>
+    <rect x="240" y="0" width="70" height="50" fill="#4EE1A0" opacity="0.5" rx="2"/>
+    <rect x="320" y="0" width="70" height="50" fill="#ff6b6b" opacity="0.8" rx="2"/>
+    
+    <!-- Row 2 -->
+    <rect x="0" y="60" width="70" height="50" fill="#666" rx="2"/>
+    <rect x="80" y="60" width="70" height="50" fill="#4EE1A0" opacity="0.7" rx="2"/>
+    <rect x="160" y="60" width="70" height="50" fill="#ff6b6b" opacity="0.5" rx="2"/>
+    <rect x="240" y="60" width="70" height="50" fill="#4EE1A0" opacity="0.6" rx="2"/>
+    <rect x="320" y="60" width="70" height="50" fill="#666" rx="2"/>
+    
+    <!-- Row 3 -->
+    <rect x="0" y="120" width="70" height="50" fill="#4EE1A0" opacity="0.4" rx="2"/>
+    <rect x="80" y="120" width="70" height="50" fill="#666" rx="2"/>
+    <rect x="160" y="120" width="70" height="50" fill="#ff6b6b" opacity="0.7" rx="2"/>
+    <rect x="240" y="120" width="70" height="50" fill="#4EE1A0" opacity="0.8" rx="2"/>
+    <rect x="320" y="120" width="70" height="50" fill="#ff6b6b" opacity="0.4" rx="2"/>
+  </g>
+  
+  <text x="270" y="320" dominant-baseline="middle" text-anchor="middle" fill="#4EE1A0" font-size="14" font-family="Space Grotesk, sans-serif">ART GALLERY</text>
+</svg>

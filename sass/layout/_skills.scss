@@ -1,0 +1,104 @@
+@use '../abstracts/variables' as *;
+
+/* === SKILLS SECTION === */
+.skills {
+  padding: $spacing-xxl 0;
+  border-top: 1px solid $color-white;
+  border-bottom: 1px solid $color-white;
+  overflow-x: hidden; // Prevenir scroll horizontal de los rings
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: $spacing-lg 0; // Restaurar padding completo (arriba y abajo)
+    border-top: none; // Remover border directo
+    border-bottom: none;
+    position: relative;
+    
+    // Crear borderline top con márgenes usando pseudo-elemento
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: $spacing-lg; // Mismo margen que el container
+      right: $spacing-lg; // Mismo margen que el container
+      height: 1px;
+      background-color: $color-white;
+    }
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    padding: $spacing-xxxl 0;
+    position: relative;
+    z-index: 5; // Asegurar que esté por encima de la imagen del header
+    background-color: $color-black; // Fondo sólido para evitar transparencias
+    
+    &::before {
+      left: calc(50% - #{$container-max-width / 2} + #{$spacing-lg}); // Centrado con márgenes
+      right: calc(50% - #{$container-max-width / 2} + #{$spacing-lg});
+    }
+    
+    // Patrón de rings en la parte inferior derecha (solo desktop)
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 3rem; // 48px desde abajo
+      right: calc(50% - #{$container-max-width / 2} + #{$spacing-lg}); // Alineado con el margen derecho del contenido
+      width: 33.125rem; // 530px - mismo tamaño que en header
+      height: 8.0625rem; // 129px - mismo tamaño que en header
+      background-image: url('/img/icons/pattern-rings.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      z-index: -1;
+      transform: translateX(50%); // Centrar desde el punto de referencia derecho
+    }
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+    text-align: center;
+    
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-lg $spacing-xl;
+      text-align: left;
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xl $spacing-xl;
+    }
+  }
+}
+
+.skill {
+  padding: $spacing-md 0;
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: $spacing-lg 0;
+  }
+  
+  &__name {
+    font-size: $font-size-l; // 48px
+    line-height: $line-height-l; // 56px
+    letter-spacing: $letter-spacing-l; // -1.5px
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: $spacing-xs; // 8px
+    
+    @media (min-width: $breakpoint-desktop) {
+      margin-bottom: $spacing-sm; // 16px
+    }
+  }
+  
+  &__experience {
+    font-size: $font-size-sm; // 16px
+    line-height: 1.625rem; // 26px
+    color: $color-light-grey;
+    
+    @media (min-width: $breakpoint-tablet) {
+      font-size: $font-size-base; // 18px
+      line-height: $line-height-base; // 28px
+    }
+  }
+}

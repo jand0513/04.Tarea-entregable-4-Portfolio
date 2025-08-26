@@ -1,0 +1,22 @@
+<!-- Thumbnail Project 4 - Entertainment Web App -->
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="400" viewBox="0 0 540 400" style="background: #1a1a1a">
+  <rect width="540" height="400" fill="#1a1a1a"/>
+  <rect x="50" y="50" width="440" height="300" fill="#0f0f0f" rx="8"/>
+  <!-- Grid of entertainment items -->
+  <rect x="70" y="70" width="80" height="60" fill="#4EE1A0" opacity="0.8" rx="4"/>
+  <rect x="170" y="70" width="80" height="60" fill="#666" rx="4"/>
+  <rect x="270" y="70" width="80" height="60" fill="#4EE1A0" opacity="0.6" rx="4"/>
+  <rect x="370" y="70" width="80" height="60" fill="#666" rx="4"/>
+  
+  <rect x="70" y="150" width="80" height="60" fill="#666" rx="4"/>
+  <rect x="170" y="150" width="80" height="60" fill="#4EE1A0" opacity="0.4" rx="4"/>
+  <rect x="270" y="150" width="80" height="60" fill="#666" rx="4"/>
+  <rect x="370" y="150" width="80" height="60" fill="#4EE1A0" opacity="0.7" rx="4"/>
+  
+  <rect x="70" y="230" width="80" height="60" fill="#4EE1A0" opacity="0.5" rx="4"/>
+  <rect x="170" y="230" width="80" height="60" fill="#666" rx="4"/>
+  <rect x="270" y="230" width="80" height="60" fill="#666" rx="4"/>
+  <rect x="370" y="230" width="80" height="60" fill="#4EE1A0" opacity="0.6" rx="4"/>
+  
+  <text x="270" y="330" dominant-baseline="middle" text-anchor="middle" fill="#4EE1A0" font-size="14" font-family="Space Grotesk, sans-serif">ENTERTAINMENT</text>
+</svg>

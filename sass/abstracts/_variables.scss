@@ -1,0 +1,65 @@
+// === COLORS ===
+// Primary Colors
+$color-black: #151515;
+$color-dark-grey: #242424;
+$color-green: #4EE1A0;
+$color-light-grey: #D9D9D9;
+$color-white: #FFFFFF;
+
+// Error Colors
+$color-error: #FF6F5B;
+
+// === TYPOGRAPHY ===
+// Font Family
+$font-primary: "Space Grotesk", sans-serif;
+
+// Font Weights
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Font Sizes
+$font-size-xl: 5.5rem; // 88px
+$font-size-l: 3rem; // 48px
+$font-size-m: 1.5rem; // 24px
+$font-size-base: 1.125rem; // 18px
+$font-size-sm: 1rem; // 16px
+
+// Line Heights
+$line-height-xl: 5.5rem; // 88px
+$line-height-l: 3.5rem; // 56px
+$line-height-m: 2rem; // 32px
+$line-height-base: 1.75rem; // 28px
+
+// Letter Spacing
+$letter-spacing-xl: -0.15625rem; // -2.5px
+$letter-spacing-l: -0.09375rem; // -1.5px
+$letter-spacing-normal: normal;
+
+// === SPACING ===
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 3rem; // 48px
+$spacing-xxl: 4rem; // 64px
+$spacing-xxxl: 6rem; // 96px
+
+// === BREAKPOINTS ===
+$breakpoint-mobile: 375px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1110px;
+
+// === CONTAINER ===
+$container-max-width: 1110px;
+$container-padding: $spacing-sm;
+
+// === TRANSITIONS ===
+$transition-fast: 0.2s ease-in-out;
+$transition-normal: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+
+// === Z-INDEX ===
+$z-index-overlay: 10;
+$z-index-modal: 100;
+$z-index-tooltip: 1000;

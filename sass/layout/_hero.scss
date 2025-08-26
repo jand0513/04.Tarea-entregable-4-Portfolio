@@ -1,0 +1,99 @@
+@use '../abstracts/variables' as *;
+
+/* === HERO SECTION === */
+.hero {
+  padding: $spacing-xxl 0;
+  text-align: center;
+  position: relative;
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: $spacing-xxxl 0;
+    text-align: left;
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0 0 $spacing-xxxl;
+  }
+  
+  &__text {
+    position: relative;
+    z-index: 5;
+    padding: 0 0 $spacing-xl; // 48px padding bottom en mobile
+    text-align: center; // Centrar todo el contenido en mobile
+    
+    @media (min-width: $breakpoint-tablet) {
+      padding: 0;
+      text-align: left; // Alineado a la izquierda en tablet+
+    }
+  }
+  
+  &__heading {
+    font-size: 2.25rem; // 36px mobile (reducido 10% de 40px)
+    line-height: 2.25rem; // 36px
+    letter-spacing: -0.07em; // -1.14px
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: $spacing-md; // 24px
+    text-align: center; // Centrado en mobile
+    
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 4.5rem; // 72px tablet
+      line-height: 5.5rem; // Incrementar line-height para alinear con imagen
+      margin-bottom: $spacing-xxl; // 64px
+      text-align: left; // Alineado a la izquierda en tablet+
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      font-size: $font-size-xl; // 88px desktop
+      line-height: $line-height-xl; // 88px
+      letter-spacing: $letter-spacing-xl; // -2.5px
+      margin-bottom: $spacing-xl; // 48px
+    }
+  }
+  
+  &__name {
+    border-bottom: 6px solid $color-green;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+  }
+  
+  &__description {
+    font-size: 0.9rem; // 14.4px mobile (reducido 10% de 16px)
+    line-height: 1.4625rem; // 23.4px (reducido 10% de 26px)
+    color: $color-light-grey;
+    margin-bottom: $spacing-md; // 24px
+    max-width: 343px; // Ancho máximo para mobile
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; // Centrado en mobile
+    
+    @media (min-width: $breakpoint-tablet) {
+      font-size: $font-size-base; // 18px tablet+
+      line-height: 2rem; // Incrementar line-height para mayor espaciado
+      margin-bottom: $spacing-xxl; // Incrementar margen inferior
+      max-width: 445px;
+      text-align: left; // Alineado a la izquierda en tablet+
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      line-height: $line-height-base; // Restaurar line-height normal en desktop
+      margin: 0 0 $spacing-xl;
+    }
+  }
+  
+  // Centrar botón en mobile
+  .btn--primary {
+    @media (max-width: 767px) {
+      display: inline-block;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    @media (min-width: $breakpoint-tablet) {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}

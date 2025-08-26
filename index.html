@@ -1,0 +1,331 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+  <title>Adam Keyes - Frontend Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Adam Keyes, a UK-based frontend developer passionate about building accessible web applications">
+
+  <meta property="og:title" content="Adam Keyes - Frontend Developer Portfolio">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#151515">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header with Navigation -->
+  <header class="header">
+    <!-- Navigation wrapper - Solo logo -->
+    <div class="header__nav">
+      <div class="container">
+        <nav class="navbar">
+          <div class="navbar__brand">
+            <img src="./img/logoadamkeyes.png" alt="Adam Keyes" class="navbar__logo">
+          </div>
+        </nav>
+      </div>
+    </div>
+    
+    <!-- Profile Image for Mobile only - CON iconos sociales dentro -->
+    <div class="header__image header__image--mobile">
+      <!-- Iconos sociales arriba en mobile -->
+      <ul class="navbar__social">
+        <li><a href="#" class="navbar__link" aria-label="GitHub"><img src="./img/icons/icon-github.svg" alt="GitHub"></a></li>
+        <li><a href="#" class="navbar__link" aria-label="Frontend Mentor"><img src="./img/icons/icon-frontend-mentor.svg" alt="Frontend Mentor"></a></li>
+        <li><a href="#" class="navbar__link" aria-label="LinkedIn"><img src="./img/icons/icon-linkedin.svg" alt="LinkedIn"></a></li>
+        <li><a href="#" class="navbar__link" aria-label="Twitter"><img src="./img/icons/icon-twitter.svg" alt="Twitter"></a></li>
+      </ul>
+      <picture>
+        <img src="./img/mobile/image-removebg-preview.png" alt="Adam Keyes - Profile Picture" class="header__photo">
+      </picture>
+      <div class="header__rings"></div>
+      <div class="header__circle"></div>
+    </div>
+    
+    <!-- Main content wrapper for two columns in tablet -->
+    <div class="header__main">
+      <!-- Left column: Hero content with container -->
+      <div class="header__content">
+        <div class="container">
+          <div class="hero__text">
+            <h2 class="hero__heading">
+              Nice to meet you!<br>
+              I'm <span class="hero__name">Adam Keyes</span>.
+            </h2>
+            <p class="hero__description">
+              Based in the UK, I'm a front-end developer passionate about building accessible web apps that users love.
+            </p>
+            <a href="#contact" class="btn btn--primary">CONTACT ME</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right column: Profile Image for Tablet/Desktop -->
+      <div class="header__image header__image--tablet-desktop">
+        <picture>
+          <source media="(min-width: 1110px)" srcset="./img/desktop/image-profile-desktop.png">
+          <img src="./img/tablet/image-profile-tablet.png" alt="Adam Keyes - Profile Picture" class="header__photo">
+        </picture>
+        <div class="header__rings"></div>
+        <div class="header__circle"></div>
+        <!-- Iconos sociales para tablet/desktop -->
+        <ul class="navbar__social">
+          <li><a href="#" class="navbar__link" aria-label="GitHub"><img src="./img/icons/icon-github.svg" alt="GitHub"></a></li>
+          <li><a href="#" class="navbar__link" aria-label="Frontend Mentor"><img src="./img/icons/icon-frontend-mentor.svg" alt="Frontend Mentor"></a></li>
+          <li><a href="#" class="navbar__link" aria-label="LinkedIn"><img src="./img/icons/icon-linkedin.svg" alt="LinkedIn"></a></li>
+          <li><a href="#" class="navbar__link" aria-label="Twitter"><img src="./img/icons/icon-twitter.svg" alt="Twitter"></a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Skills Section -->
+    <section class="skills">
+      <div class="container">
+        <div class="skills__grid">
+          <div class="skill">
+            <h3 class="skill__name">HTML</h3>
+            <p class="skill__experience">4 Years Experience</p>
+          </div>
+          <div class="skill">
+            <h3 class="skill__name">CSS</h3>
+            <p class="skill__experience">4 Years Experience</p>
+          </div>
+          <div class="skill">
+            <h3 class="skill__name">Javascript</h3>
+            <p class="skill__experience">4 Years Experience</p>
+          </div>
+          <div class="skill">
+            <h3 class="skill__name">Accessibility</h3>
+            <p class="skill__experience">4 Years Experience</p>
+          </div>
+          <div class="skill">
+            <h3 class="skill__name">React</h3>
+            <p class="skill__experience">3 Years Experience</p>
+          </div>
+          <div class="skill">
+            <h3 class="skill__name">Sass</h3>
+            <p class="skill__experience">3 Years Experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+      <div class="container">
+        <div class="projects__header">
+          <h2 class="projects__title">Projects</h2>
+          <a href="#contact" class="btn btn--primary">CONTACT ME</a>
+        </div>
+        
+        <div class="projects__grid">
+          <!-- Project 1 -->
+          <article class="project">
+            <div class="project__image">
+              <picture>
+                <source media="(min-width: 1110px)" srcset="./img/desktop/thumbnail-project-1-desktop.png">
+                <source media="(min-width: 768px)" srcset="./img/tablet/thumbnail-project-1-tablet.png">
+                <img src="./img/mobile/thumbnail-project-1-mobile.png" alt="Design Portfolio" class="project__img">
+              </picture>
+              <div class="project__overlay">
+                <a href="#" class="btn btn--secondary">VIEW PROJECT</a>
+                <a href="#" class="btn btn--secondary">VIEW CODE</a>
+              </div>
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">DESIGN PORTFOLIO</h3>
+              <div class="project__tech">
+                <span class="project__tag">HTML</span>
+                <span class="project__tag">CSS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project">
+            <div class="project__image">
+              <picture>
+                <source media="(min-width: 1110px)" srcset="./img/desktop/thumbnail-project-2-desktop.png">
+                <source media="(min-width: 768px)" srcset="./img/tablet/thumbnail-project-2-tablet.png">
+                <img src="./img/mobile/thumbnail-project-2-mobile.png" alt="E-Learning Landing Page" class="project__img">
+              </picture>
+              <div class="project__overlay">
+                <a href="#" class="btn btn--secondary">VIEW PROJECT</a>
+                <a href="#" class="btn btn--secondary">VIEW CODE</a>
+              </div>
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">E-LEARNING LANDING PAGE</h3>
+              <div class="project__tech">
+                <span class="project__tag">HTML</span>
+                <span class="project__tag">CSS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project">
+            <div class="project__image">
+              <picture>
+                <source media="(min-width: 1110px)" srcset="./img/desktop/thumbnail-project-3-desktop.png">
+                <source media="(min-width: 768px)" srcset="./img/tablet/thumbnail-project-3-tablet.png">
+                <img src="./img/mobile/thumbnail-project-3-mobile.png" alt="Todo Web App" class="project__img">
+              </picture>
+              <div class="project__overlay">
+                <a href="#" class="btn btn--secondary">VIEW PROJECT</a>
+                <a href="#" class="btn btn--secondary">VIEW CODE</a>
+              </div>
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">TODO WEB APP</h3>
+              <div class="project__tech">
+                <span class="project__tag">HTML</span>
+                <span class="project__tag">CSS</span>
+                <span class="project__tag">JAVASCRIPT</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project">
+            <div class="project__image">
+              <picture>
+                <source media="(min-width: 1110px)" srcset="./img/desktop/thumbnail-project-4-desktop.png">
+                <source media="(min-width: 768px)" srcset="./img/tablet/thumbnail-project-4-tablet.png">
+                <img src="./img/mobile/thumbnail-project-4-mobile.png" alt="Entertainment Web App" class="project__img">
+              </picture>
+              <div class="project__overlay">
+                <a href="#" class="btn btn--secondary">VIEW PROJECT</a>
+                <a href="#" class="btn btn--secondary">VIEW CODE</a>
+              </div>
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">ENTERTAINMENT WEB APP</h3>
+              <div class="project__tech">
+                <span class="project__tag">HTML</span>
+                <span class="project__tag">CSS</span>
+                <span class="project__tag">JAVASCRIPT</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project">
+            <div class="project__image">
+              <picture>
+                <source media="(min-width: 1110px)" srcset="./img/desktop/thumbnail-project-5-desktop.png">
+                <source media="(min-width: 768px)" srcset="./img/tablet/thumbnail-project-5-tablet.png">
+                <img src="./img/mobile/thumbnail-project-5-mobile.png" alt="Memory Game" class="project__img">
+              </picture>
+              <div class="project__overlay">
+                <a href="#" class="btn btn--secondary">VIEW PROJECT</a>
+                <a href="#" class="btn btn--secondary">VIEW CODE</a>
+              </div>
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">MEMORY GAME</h3>
+              <div class="project__tech">
+                <span class="project__tag">HTML</span>
+                <span class="project__tag">CSS</span>
+                <span class="project__tag">JAVASCRIPT</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project">
+            <div class="project__image">
+              <picture>
+                <source media="(min-width: 1110px)" srcset="./img/desktop/thumbnail-project-6-desktop.png">
+                <source media="(min-width: 768px)" srcset="./img/tablet/thumbnail-project-6-tablet.png">
+                <img src="./img/mobile/thumbnail-project-6-mobile.png" alt="Art Gallery Showcase" class="project__img">
+              </picture>
+              <div class="project__overlay">
+                <a href="#" class="btn btn--secondary">VIEW PROJECT</a>
+                <a href="#" class="btn btn--secondary">VIEW CODE</a>
+              </div>
+            </div>
+            <div class="project__content">
+              <h3 class="project__title">ART GALLERY SHOWCASE</h3>
+              <div class="project__tech">
+                <span class="project__tag">HTML</span>
+                <span class="project__tag">CSS</span>
+                <span class="project__tag">JAVASCRIPT</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__content">
+          <div class="contact__text">
+            <h2 class="contact__title">Contact</h2>
+            <p class="contact__description">
+              I would love to hear about your project and how I could help. Please fill in the form, and I'll get back to you as soon as possible.
+            </p>
+          </div>
+          
+          <form class="contact__form" id="contactForm" novalidate>
+            <div class="form-group">
+              <input type="text" id="name" name="name" class="form-input" placeholder="NAME" required>
+              <span class="form-error" id="nameError"></span>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="email" name="email" class="form-input" placeholder="EMAIL" required>
+              <span class="form-error" id="emailError"></span>
+            </div>
+            
+            <div class="form-group">
+              <textarea id="message" name="message" class="form-input form-textarea" placeholder="MESSAGE" required rows="5"></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            
+            <button type="submit" class="btn btn--primary btn--form">SEND MESSAGE</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar__brand">
+          <img src="./img/logoadamkeyes.png" alt="Adam Keyes" class="navbar__logo">
+        </div>
+        <ul class="navbar__social">
+          <li><a href="#" class="navbar__link" aria-label="GitHub"><img src="./img/icons/icon-github.svg" alt="GitHub"></a></li>
+          <li><a href="#" class="navbar__link" aria-label="Frontend Mentor"><img src="./img/icons/icon-frontend-mentor.svg" alt="Frontend Mentor"></a></li>
+          <li><a href="#" class="navbar__link" aria-label="LinkedIn"><img src="./img/icons/icon-linkedin.svg" alt="LinkedIn"></a></li>
+          <li><a href="#" class="navbar__link" aria-label="Twitter"><img src="./img/icons/icon-twitter.svg" alt="Twitter"></a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Vite Entry Point -->
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

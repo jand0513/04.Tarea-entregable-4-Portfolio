@@ -1,0 +1,174 @@
+@use '../abstracts/variables' as *;
+
+/* === CONTACT SECTION === */
+.contact {
+  padding: $spacing-xxl 0;
+  background-color: $color-dark-grey;
+  position: relative;
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: $spacing-xxxl 0;
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    padding: 5.25rem 0; // 84px
+  }
+  
+  // Background rings pattern
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: $spacing-xxxl; // 96px (6rem) - aproximadamente 100px
+    left: -21.875rem; // -350px
+    width: 33.125rem; // 530px
+    height: 8.0625rem; // 129px
+    background-image: url('/img/icons/pattern-rings.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+    
+    @media (min-width: $breakpoint-tablet) {
+      left: -23.4375rem; // -375px
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      left: -22.5rem; // -360px
+    }
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    position: relative;
+    z-index: 5;
+    
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr; // Una sola columna en tablet
+      gap: $spacing-xl;
+      text-align: center; // Centrar contenido
+      max-width: 27.8125rem; // 445px ancho máximo
+      margin: 0 auto; // Centrar el contenedor
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      grid-template-columns: 1fr 1fr; // Dos columnas en desktop
+      gap: 13.75rem; // 220px
+      text-align: left;
+      max-width: none; // Restaurar ancho completo en desktop
+      margin: 0; // Restaurar margen normal en desktop
+    }
+  }
+  
+  &__text {
+    text-align: center;
+    
+    @media (min-width: $breakpoint-tablet) {
+      text-align: center; // Mantener centrado en tablet
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      text-align: left; // Alineado a la izquierda en desktop
+    }
+  }
+  
+  &__title {
+    font-size: $font-size-l; // 48px mobile
+    line-height: $line-height-l; // 56px
+    letter-spacing: $letter-spacing-l; // -1.5px
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: $spacing-lg; // 32px
+    
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 4.5rem; // 72px tablet
+      line-height: 4.5rem;
+      margin-bottom: $spacing-xl; // 48px
+    }
+    
+    @media (min-width: $breakpoint-desktop) {
+      font-size: $font-size-xl; // 88px desktop
+      line-height: $line-height-xl; // 88px
+      letter-spacing: $letter-spacing-xl; // -2.5px
+    }
+  }
+  
+  &__description {
+    font-size: $font-size-sm; // 16px mobile
+    line-height: 1.625rem; // 26px
+    color: $color-light-grey;
+    
+    @media (min-width: $breakpoint-tablet) {
+      font-size: $font-size-base; // 18px tablet+
+      line-height: $line-height-base; // 28px
+    }
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+}
+
+/* === FORM STYLES === */
+.form-group {
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $color-white;
+  padding: 0 0 $spacing-sm; // 16px bottom padding
+  font-size: $font-size-sm; // 16px
+  line-height: 1.625rem; // 26px
+  color: $color-white;
+  transition: border-color $transition-normal;
+  
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-base; // 18px
+    line-height: $line-height-base; // 28px
+  }
+  
+  &::placeholder {
+    color: $color-white;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: -0.01389em; // -0.25px at 18px
+  }
+  
+  &:focus {
+    outline: none;
+    border-bottom-color: $color-green;
+  }
+  
+  &.error {
+    border-bottom-color: $color-error;
+  }
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 6.6875rem; // 107px
+  padding-top: $spacing-sm; // 16px top padding for textarea
+}
+
+.form-error {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  font-size: 0.75rem; // 12px
+  line-height: 1rem; // 16px
+  color: $color-error;
+  margin-top: 0.25rem; // 4px
+  opacity: 0;
+  visibility: hidden;
+  transition: all $transition-normal;
+  
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
